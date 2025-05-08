@@ -199,7 +199,7 @@ public class TraversalController {
             }
         }
 
-        System.out.println("\nTraversal Tree Adjacency Matrix:");
+        System.out.println("Traversal Tree Adjacency Matrix:");
         for (int[] row : treeMatrix) {
             for (int val : row) {
                 System.out.print(val + "  ");

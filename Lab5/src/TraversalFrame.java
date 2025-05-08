@@ -16,6 +16,7 @@ public class TraversalFrame extends JFrame {
 
         JButton bfsBtn = new JButton("Start BFS");
         bfsBtn.addActionListener((ActionEvent e) -> {
+            System.out.println("\nBFS");
             controller.startBFS();
             controller.nextStep();
             graphPanel.repaint();
@@ -23,6 +24,7 @@ public class TraversalFrame extends JFrame {
 
         JButton dfsBtn = new JButton("Start DFS");
         dfsBtn.addActionListener((ActionEvent e) -> {
+            System.out.println("\nDFS");
             controller.startDFS();
             controller.nextStep();
             graphPanel.repaint();
