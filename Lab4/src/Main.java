@@ -335,8 +335,8 @@ public class Main {
         int numberOfVertices = 12;
         final int seed = 4421;
         final double k1 = 1 - 2 * 0.01 - 0.01 - 0.3;
-        //final double k2 = 1 - 2 * 0.005 - 0.005 - 0.27;
-        final double k2 = 0.57;
+        final double k2 = 1 - 2 * 0.005 - 0.005 - 0.27;
+        //final double k2 = 0.57;
 
         int[][] directMatrix = createDirectedMatrix(numberOfVertices, seed, k1);
         int[][] nonDirectMatrix = transformToUndirectedMatrix(directMatrix);
