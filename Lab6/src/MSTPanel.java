@@ -47,11 +47,12 @@ public class MSTPanel extends JPanel {
         for (Edge edge : controller.getHighlightedEdges()) {
             if (edge.from() == edge.to())
                 drawSelfLoop(g2, centers[edge.from()]);
-            drawLine(g2, centers[edge.from()], centers[edge.to()]);
+            drawLine(g2, centers[edge.from()], centers[edge.to()], matrix[edge.from()][edge.to()]);
+
         }
     }
 
-    private void drawLine(Graphics2D g2, Point from, Point to) {
+    private void drawLine(Graphics2D g2, Point from, Point to, int weight) {
         final int radius = 15;
 
         double dx = to.x - from.x;
@@ -65,8 +66,15 @@ public class MSTPanel extends JPanel {
         int endX = (int) (to.x - unitX * radius);
         int endY = (int) (to.y - unitY * radius);
 
+        g2.setColor(Color.GREEN);
         g2.drawLine(startX, startY, endX, endY);
+
+        int midX = (startX + endX) / 2;
+        int midY = (startY + endY) / 2;
+        g2.setColor(Color.BLUE);
+        g2.drawString(String.valueOf(weight), midX + 5, midY - 5);
     }
+
 
     private void drawSelfLoop(Graphics2D g2, Point center) {
         int loopSize = 30;
@@ -76,6 +84,7 @@ public class MSTPanel extends JPanel {
         int x = center.x + offsetX;
         int y = center.y - offsetY;
 
+        g2.setColor(Color.GREEN);
         g2.drawArc(x, y, loopSize, loopSize, 200, 285);
     }
 
